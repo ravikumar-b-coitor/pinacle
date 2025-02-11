@@ -6,26 +6,9 @@ import { useTheme } from 'next-themes';
 
 export default function ThemeToggler() {
 	const { theme, setTheme, resolvedTheme } = useTheme(); // Using theme and resolvedTheme from ThemeProvider
-	const [themeMode, setThemeMode] = useState('System'); // Local state for active mode (Light, Dark, System)
-
-	useEffect(() => {
-		// Sync themeMode state with resolvedTheme
-		if (resolvedTheme === 'dark') {
-			setThemeMode('Dark');
-		} else if (resolvedTheme === 'light') {
-			setThemeMode('Light');
-		} else {
-			setThemeMode('System');
-		}
-	}, [resolvedTheme]);
 
 	return (
-		<div className="min-h-screen w-full bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark flex flex-col items-center justify-center">
-			{/* Display the selected theme */}
-			<p className="mb-4">
-				Current Theme: <strong>{themeMode} Mode</strong>
-			</p>
-
+		<div className="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
 			{/* Grid of icons */}
 			<div className="border rounded-full p-2 grid grid-cols-3 gap-1 mt-4">
 				<div
