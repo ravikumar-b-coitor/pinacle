@@ -1,11 +1,9 @@
 'use client';
-
-import { useState, useEffect } from 'react';
 import { Moon, Sun, Monitor } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
 export default function ThemeToggler() {
-	const { theme, setTheme, resolvedTheme } = useTheme(); // Using theme and resolvedTheme from ThemeProvider
+	const { theme, setTheme } = useTheme(); // Using theme and resolvedTheme from ThemeProvider
 
 	return (
 		<div className="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
